@@ -1,0 +1,22 @@
+1. mkdir name =>to create a folder with name="name"
+2. ls -a => to see list of all directories and files in a particlar location or directory
+3. ls =>List
+4. cd => Change directory
+5. cd ~ => Goback to root directory
+6. cd .. => Goback one step
+7. cd path => Forward or backward we ca specify entire path from root
+8. alt+scroll => Move cursor to select between the path to edit in any command
+9. ctrl+a => Selects the first letter of command (shift to start of command)
+10.ctrl+e => Selects the last letter of command (shift to last of command)
+11.ctrl+u => Clears or delete the current line written code.
+12.touch name.extension => Touch is a command to create a file with a name="name" and the type of file with .extension like .txt .pdf .doc .py .js .html etc.
+13.start filename => Open a file with the default application (like notepad for .txt files)
+14.Application file.ext=> Open a file with desired application you want (its like opening same .txt file opened in VScode)
+15.rm filename=> Deletes/removes the files
+16.rm *=>Removes/deletes all files in the directory (like ctrl+a del) (! cautious before doing so check the directory)
+17.rm -r foldername=> Deletes/removes the folder/directory
+18.rm -rf foldername=> Deletes/removes the folder/directory forcefully (without confirmation) (!cautious again)
+19.sudo => including sudo before any command specifies that you are a admin(Authorized)(special permission)
+20.pwd=>where currently we present working directory.
+21.clear=>clean cmd prompt
+

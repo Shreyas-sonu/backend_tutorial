@@ -1,0 +1,5 @@
+hyper.js
+git
+hackertyper.com => to prank the coding
+to use autofill for folder name "doc+tab" to find document folder
+~ shows you are in root folder
