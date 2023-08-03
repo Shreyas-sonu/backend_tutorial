@@ -1,8 +1,8 @@
 1. mkdir name =>to create a folder with name="name"
 2. ls -a => to see list of all directories and files in a particlar location or directory
-3. ls =>List
+3. ls (or) dir =>List
 4. cd => Change directory
-5. cd ~ => Goback to root directory
+5. cd ~ (or) cd\ => Goback to root directory
 6. cd .. => Goback one step
 7. cd path => Forward or backward we ca specify entire path from root
 8. alt+scroll => Move cursor to select between the path to edit in any command
@@ -19,4 +19,4 @@
 19.sudo => including sudo before any command specifies that you are a admin(Authorized)(special permission)
 20.pwd=>where currently we present working directory.
 21.clear=>clean cmd prompt
-
+22.cd "file name"=> if there is a white space
