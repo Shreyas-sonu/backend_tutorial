@@ -1,6 +1,7 @@
-1.it is a server side language
+1.it is a server-side language
 2.it allows a website or an App to access the remote/pc directly by the app.
-3. some of websites example are trello,ebay,Netflix etc.
+3. it is open source javascript run time environment 
+4. some of the websites example are trello,ebay,Netflix etc.
 REPL = READ EVALUATION PRINT LOOP
 this allows us to execute the code in bite sized chuncks
 the is like a environment where we can write and execute js code directly 
