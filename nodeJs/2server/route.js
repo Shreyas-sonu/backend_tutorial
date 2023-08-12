@@ -1,3 +1,4 @@
+const { write } = require("fs");
 const http = require("http");
 const url = require("url");
 // server is created and stored in server
@@ -10,11 +11,14 @@ const server = http.createServer((req, res) => {
   } else if (pathName === "/user") {
     res.end("<h1>Your are seeing users</h1>");
   } else {
+    res.writeHead(404, {
+      "Content-type": "text/html",
+      "my-own-header":"Sonu-007",
+    })
     res.end("<h5>Page not found!!</h5>");
   }
 });
 //specifying where to start (listen)
-
 server.listen("5000", "127.0.0.1", () => {
   console.log("Server started in 5000");
 });
