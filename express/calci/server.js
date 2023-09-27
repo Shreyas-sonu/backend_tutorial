@@ -8,6 +8,6 @@ app.post("/", (req, res) => {
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     const result=num1+num2
-  res.send("the result is " + result + " Bitch !!!");
+  res.send("the result is " + result + "  Bitch !!!");
 });
 app.listen(5000, () => console.log("listening on 5000"));
