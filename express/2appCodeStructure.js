@@ -5,11 +5,6 @@ const fs = require('fs');
 const app = express();
 //middle ware setup
 app.use(express.json());
-//custom middleware
-app.use((req, res, next) => {
-  console.log('hello from middleware 😀');
-  next(); // if we dont call the next middleware req response cycle will end here
-}); //by default middle ware will have the access to req and res the 3rd argument is next middleware in the stack
 const port = 5000;
 app.get('/', (req, res) => {
   res.send('Welcome to my backend Api store !!!');
@@ -85,12 +80,17 @@ const deleteTour = (req, res) => {
   }
 };
 
+//! routes
+// app.get('/api/v1/tours', getAllTours);
+// app.post('/api/v1/tours', createTour);
+// //params
+// app.get('/api/v1/tours/:id', getTour);
+// app.patch('/api/v1/tours/:id', editTour);
+// app.delete('/api/v1/tours/:id', deleteTour);
+
+// further modification
+// all
 app.route('/api/v1/tours').get(getAllTours).post(createTour);
-//? if we specify the middleware after the routes it will never be executed because the req res cycle will end by here and there will be no necessity of additional middleware
-app.use((req, res, next) => {
-  console.log('hello from middleware 😀');
-  next(); // if we dont call the next middleware req response cycle will end here
-});
 //specific
 app.route('/api/v1/tours').get(getTour).patch(editTour).delete(deleteTour);
 
