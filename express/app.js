@@ -6,7 +6,9 @@ const app = express();
 
 //! middle ware setup
 app.use(express.json());
-app.use(morgan('dev')); //string is inbuilt format for middleware here
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev')); //string is inbuilt format for middleware here
+}
 //middleware to serve static files
 app.use(express.static(`${__dirname}/public`));
 //custom middleware
