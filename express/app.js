@@ -7,6 +7,8 @@ const app = express();
 //! middle ware setup
 app.use(express.json());
 app.use(morgan('dev')); //string is inbuilt format for middleware here
+//middleware to serve static files
+app.use(express.static(`${__dirname}/public`));
 //custom middleware
 app.use((req, res, next) => {
   console.log('hello from middleware 😀');
@@ -17,7 +19,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Welcome to my backend Api store !!!');
 });
-app.use('/api/v1/tours', tourRouter);// also a middleware
+app.use('/api/v1/tours', tourRouter); // also a middleware
 app.use('/api/v1/users', userRouter);
 
 module.exports = app;
