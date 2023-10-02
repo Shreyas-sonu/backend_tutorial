@@ -1,10 +1,26 @@
 const fs = require('fs');
 
-
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/../dev-data/data/tours.json`)
 );
 
+exports.checkId = (req, res, next, val) => {
+  const id = Number.parseInt(val);
+  const toursForDuration = tours.filter((ex) => ex.id === id);
+  if (toursForDuration.length === 0) {
+    return res.status(404).json({ status: 'Failed', message: 'Invalid ID' });
+  } else {
+    next();
+  }
+};
+exports.checkBody = (req, res, next) => {
+  if (!req.body.name || !req.body.price) {
+    res
+      .status(400)
+      .json({ status: 'failed', message: 'Missing name or price please add' });
+  }
+  next();
+};
 //get all tours
 exports.getAllTours = (req, res) => {
   res
@@ -28,44 +44,21 @@ exports.createTour = (req, res) => {
 };
 //get a single tour
 exports.getTour = (req, res) => {
-  console.log(req.params);
-  const id = Number.parseInt(req.params.id);
-  const toursForDuration = tours.filter((ex) => ex.duration === id);
-  if (toursForDuration.length > 0) {
-    console.log(toursForDuration);
-    res.status(200).json({
-      status: 'success',
-      data: toursForDuration,
-      length: toursForDuration.length,
-    });
-  } else {
-    res.send(404).send('No Tours found for the specified duration');
-  }
+  res.status(200).json({
+    status: 'success',
+    data: toursForDuration,
+    length: toursForDuration.length,
+  });
 };
 exports.editTour = (req, res) => {
-  console.log(req.params);
-  const id = Number.parseInt(req.params.id);
-  const toursForDuration = tours.find((ex) => ex.id === id);
-  //do modification edit the object
-  if (toursForDuration) {
-    res.status(200).json({
-      status: 'success',
-      data: toursForDuration,
-    });
-  } else {
-    res.send(404).send('invalid ID');
-  }
+  res.status(200).json({
+    status: 'success',
+    data: toursForDuration,
+  });
 };
 exports.deleteTour = (req, res) => {
-  const id = Number.parseInt(req.params.id);
-  const toursForDuration = tours.filter((ex) => ex.duration === id);
-  //add deletion logic
-  if (toursForDuration.length > 0) {
-    console.log(toursForDuration);
-    res.status(204).json({
-      data: null,
-    });
-  } else {
-    res.send(404).send('invalid ID');
-  }
+  console.log(toursForDuration);
+  res.status(204).json({
+    data: null,
+  });
 };

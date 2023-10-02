@@ -2,6 +2,7 @@ const express = require('express');
 const controller = require('../controllers/userController');
 
 const router = express.Router();
+
 router
   .route('/api/v1/tours')
   .get(controller.getAllUsers)
@@ -12,4 +13,4 @@ router
   .patch(controller.editUser)
   .delete(controller.deleteUser);
 
-module.exports=router;
+module.exports = router;
